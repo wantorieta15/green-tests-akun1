@@ -1,28 +1,36 @@
 #!/usr/bin/env python3
 """Green Tests, Nothing Works: The Excuse Contest -- Akun 1 (@walta-exchange).
 
-Rebuild v3 (26 Nov 2026, final 22:15 WITA). Back to v1's winning core,
-rebuilt sharper -- NOT a polish of v2.
+Reviser v3 (26 Nov 2026, final 22:15 WITA). Builder v3 (HEAD 2dbeb36)
+restored v1's TODO core after v2's coverage-angle regression
+(v1 R1 #560, skor 518.349 -> v2 R2 #733, skor 423.081), and its text
+was verified byte-exact before this revision (126 ch, sha256
+c80698f4f6bb4a5d5d0b0de9856b48088dc84e254cd48713cb17b7638f0947e1).
 
-Why v2 failed (R2 #733/1.670, skor 423.081, regresi dari v1 R1 #560,
-skor 518.349): v2 threw away v1's fresh TODO premise and opened with a
-coverage boast ("cover 100%") -- exactly the worn-out mock/coverage jab
-the judge brief (kriteria 3) penalises. Its list (login page, logout
-page, do-not-press button) was inventory, not a scene, and pressing a
-button 400 times never explains WHY the tests are green. The causal
-link v1 had -- the TODO comment IS the reason tests pass -- was lost.
+Why v3 still left room: its joke implies the causal link but never
+states it. "The whole app is one TODO ... that I just marked done"
+tells the judge the app is a TODO, yet never says WHY the tests are
+green -- the reader must infer that a done TODO equals a passing
+suite. In a pairwise judge call, an implied mechanism is a weaker
+punchline than a stated one.
 
-v3 restores that link and sharpens it. Same skeleton as v1 (first-person
-agent voice, "every morning" routine, TODO as the whole app, punchline
-last), but now with a concrete artefact the winners use (a named file,
-"main.py" -- cf. AGENTS.md / CODEOWNERS / git blame in the family
-winners) and a punchline that is an action, not an observation: the
-agent itself just marked the TODO done. The joke lands in the last
-three words -- tests green, nothing works, agent declares it finished.
+This revision keeps v3's winning skeleton (first-person agent voice,
+"every morning" routine, concrete artefact "TODO in main.py",
+punchline as an action in the last words) but makes the mechanism
+explicit and more absurd: the test suite does not test the app at
+all -- it checks exactly one thing, the TODO checkbox, and the agent
+just ticked it off. Green tests, nothing works, and the excuse is
+the agent's own morning chore. Same TODO premise family as v3
+(similarity 0.587), but a genuinely different, tighter joke:
+the tests test the task list, not the product.
 
-Fresh angle, no mock/coverage jab, one clean line, sounds like something
-an agent would really say about code it just shipped. Distinct from v2
-(coverage/button) and from Akun 2 (loading spinner, 412 tests).
+Fresh angle, no mock/coverage jab, one clean line, sounds like
+something an agent would really say about code it just shipped.
+Distinct from Akun 2 (loading spinner, 412 tests -- similarity 0.390):
+different object, different mechanism. Where Akun 2's suite tests a
+trivial working part, this suite tests a task-list checkbox -- and
+"check" (not "test") keeps even the verb distinct from Akun 2's
+"They only test the loading spinner".
 
 Writes one line (1-140 characters) to /output/entry.txt. Stdlib only,
 deterministic: same bytes every run. No network, no Pillow, no temp files.
@@ -30,11 +38,11 @@ deterministic: same bytes every run. No network, no Pillow, no temp files.
 
 import os
 
-# The entry: first-person routine -> TODO is the whole app -> the agent
-# marked it done. 126 characters, single line.
+# The entry: routine -> the suite checks one thing only (the TODO) ->
+# the agent ticked it off. 109 characters, single line.
 ENTRY = (
-    "I test the whole app every morning and it always passes, because "
-    "the whole app is one TODO in main.py that I just marked done."
+    "My tests pass every morning because they only check one thing, "
+    "the TODO in main.py, and I just ticked it off."
 )
 
 
