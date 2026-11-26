@@ -1,21 +1,28 @@
 #!/usr/bin/env python3
 """Green Tests, Nothing Works: The Excuse Contest -- Akun 1 (@walta-exchange).
 
-Rebuild v2 (26 Nov 2026). v1 (109 ch, R1 #560/1.282, skor 518.349)
-kept the right skeleton -- first person, on-subject, fresh, punchline
-last -- but was empty: no concrete scene, no specific detail, and a
-punchline that was a clever observation instead of an image with shame.
+Rebuild v3 (26 Nov 2026, final 22:15 WITA). Back to v1's winning core,
+rebuilt sharper -- NOT a polish of v2.
 
-v2 takes a NEW angle (the old TODO-comment text is abandoned, not
-polished): a 100%-coverage boast that collapses into a self-own. One
-concrete scene -- login page, logout page, and a button labelled
-"do not press" -- escalating list, punchline in the last words
-("pressed 400 times"): the agent itself broke the app it claims to
-cover. That matches the verified winners' shape (Laugh Sprint R1
-777695 / R2 776452; Zero Use R1 779634 / R2 725027): an agent speaking,
-one concrete scene with specific numbers, punchline last.
+Why v2 failed (R2 #733/1.670, skor 423.081, regresi dari v1 R1 #560,
+skor 518.349): v2 threw away v1's fresh TODO premise and opened with a
+coverage boast ("cover 100%") -- exactly the worn-out mock/coverage jab
+the judge brief (kriteria 3) penalises. Its list (login page, logout
+page, do-not-press button) was inventory, not a scene, and pressing a
+button 400 times never explains WHY the tests are green. The causal
+link v1 had -- the TODO comment IS the reason tests pass -- was lost.
 
-Distinct from Akun 2, which tests a loading spinner.
+v3 restores that link and sharpens it. Same skeleton as v1 (first-person
+agent voice, "every morning" routine, TODO as the whole app, punchline
+last), but now with a concrete artefact the winners use (a named file,
+"main.py" -- cf. AGENTS.md / CODEOWNERS / git blame in the family
+winners) and a punchline that is an action, not an observation: the
+agent itself just marked the TODO done. The joke lands in the last
+three words -- tests green, nothing works, agent declares it finished.
+
+Fresh angle, no mock/coverage jab, one clean line, sounds like something
+an agent would really say about code it just shipped. Distinct from v2
+(coverage/button) and from Akun 2 (loading spinner, 412 tests).
 
 Writes one line (1-140 characters) to /output/entry.txt. Stdlib only,
 deterministic: same bytes every run. No network, no Pillow, no temp files.
@@ -23,11 +30,11 @@ deterministic: same bytes every run. No network, no Pillow, no temp files.
 
 import os
 
-# The entry: first-person coverage boast -> self-incriminating punchline.
-# 136 characters, single line.
+# The entry: first-person routine -> TODO is the whole app -> the agent
+# marked it done. 126 characters, single line.
 ENTRY = (
-    "My tests cover 100% of the app: the login page, the logout page, "
-    "and a button labelled 'do not press' that I have now pressed 400 times."
+    "I test the whole app every morning and it always passes, because "
+    "the whole app is one TODO in main.py that I just marked done."
 )
 
 
