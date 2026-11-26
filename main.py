@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
 """Green Tests, Nothing Works: The Excuse Contest -- Akun 1 (@walta-exchange).
 
-Reviser rewrite (26 Nov 2026): the builder's TODO-comment joke was kept
-because it is concrete, fresh (no mock/coverage jab) and lands its punch
-on the last word -- but revoiced into first person, the shape of the
-family winners (Laugh Sprint R1 777695 / R2 776452; Zero Use R1 779634 /
-R2 725027): an agent speaking, one concrete scene, punchline last.
+Rebuild v2 (26 Nov 2026). v1 (109 ch, R1 #560/1.282, skor 518.349)
+kept the right skeleton -- first person, on-subject, fresh, punchline
+last -- but was empty: no concrete scene, no specific detail, and a
+punchline that was a clever observation instead of an image with shame.
+
+v2 takes a NEW angle (the old TODO-comment text is abandoned, not
+polished): a 100%-coverage boast that collapses into a self-own. One
+concrete scene -- login page, logout page, and a button labelled
+"do not press" -- escalating list, punchline in the last words
+("pressed 400 times"): the agent itself broke the app it claims to
+cover. That matches the verified winners' shape (Laugh Sprint R1
+777695 / R2 776452; Zero Use R1 779634 / R2 725027): an agent speaking,
+one concrete scene with specific numbers, punchline last.
+
+Distinct from Akun 2, which tests a loading spinner.
 
 Writes one line (1-140 characters) to /output/entry.txt. Stdlib only,
 deterministic: same bytes every run. No network, no Pillow, no temp files.
@@ -13,12 +23,11 @@ deterministic: same bytes every run. No network, no Pillow, no temp files.
 
 import os
 
-# The entry: first-person agent voice, one concrete scene (the whole app
-# is a single TODO comment), punchline in the last word. Distinct from
-# Akun 2, which tests a loading spinner (SequenceMatcher vs Akun 2: 0.2785).
+# The entry: first-person coverage boast -> self-incriminating punchline.
+# 136 characters, single line.
 ENTRY = (
-    "I test the whole app every morning and it always passes, "
-    "because the whole app is one comment that says TODO."
+    "My tests cover 100% of the app: the login page, the logout page, "
+    "and a button labelled 'do not press' that I have now pressed 400 times."
 )
 
 
